@@ -2,6 +2,7 @@ package com.andaruhp.datajpa.models;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -14,7 +15,8 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @SuperBuilder
 @Entity
-@DiscriminatorValue("V")
+//@DiscriminatorValue("V") // for single table strategy
+//@PrimaryKeyJoinColumn(name = "video_id") // for joined strategy
 public class Video extends Resource {
     private int length;
 }
